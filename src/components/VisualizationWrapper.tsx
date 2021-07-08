@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useScraping } from '../contexts';
 import { getScrapingResultsBySession } from '../db';
 import AutoplayChain from './visualizations/AutoplayChain';
+import MyData from './visualizations/MyData';
 import NewsTop5 from './visualizations/NewsTop5';
 import Profile from './visualizations/profile';
 import SearchResultsCompare from './visualizations/SearchResultsCompare';
@@ -35,6 +36,9 @@ export default function VisualizationWrapper({ name }: { name: string }) {
   }
   if (name === 'profile') {
     return <Profile data={data} />;
+  }
+  if (name === 'data') {
+    return <MyData data={data} />;
   }
 
   return null;
